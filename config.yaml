@@ -3,7 +3,7 @@ credentials:
     skarlekar:
       email: skarlekar@gmail.com
       name: Srini Karlekar
-      password: $2b$12$8BL3koB3FeK8qbD6ibKtuernsEkMUS0HkL65zCjB2tyivUG7AWgam # To be replaced with hashed password
+      password: $2b$12$7sI61ohMYYxgST/RncsQveNZof7qkS0X4JM8BmTSqjk21UgfC/4Ue
     psoundappan:
       email: psoundappan@gmail.com
       name: Prabhu Soundappan
