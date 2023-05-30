@@ -52,6 +52,24 @@ def buildKnowledgeBase():
     print("Knowledge base built!")
     return knowledge_base
 
+def hide_streamlit_menu_and_footer():
+    hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            footer:after {
+                content:'Made by Multifamily Architecture'; 
+                visibility: visible;
+                display: block;
+                position: relative;
+                #background-color: red;
+                padding: 5px;
+                top: 2px;
+            }
+            </style>
+            """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 def process():
 
     knowledge_base = buildKnowledgeBase()
@@ -71,6 +89,7 @@ def process():
 
 def main():
     st.set_page_config(page_title="Fannie Mae Multifamily Underwriting SME")
+    hide_streamlit_menu_and_footer()
     name, authstatus, username = authenticate()
     
 
