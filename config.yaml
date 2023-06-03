@@ -8,6 +8,10 @@ credentials:
       email: psoundappan@gmail.com
       name: Prabhu Soundappan
       password: $2b$12$8BL3koB3FeK8qbD6ibKtuernsEkMUS0HkL65zCjB2tyivUG7AWgam # To be replaced with hashed password
+    sfischer:
+      email: Sjfischr@gmail.com
+      name: Steve Fischer
+      password: $2b$12$GZbdFTXg7o9uwh0/aK.NW.deYVthuTBzGrCJGIQv7GTP6BeO/gbFq
 cookie:
   expiry_days: 30
   key: some_signature_key # Must be string
