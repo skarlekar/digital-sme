@@ -12,3 +12,4 @@ pdf2image
 watchdog
 openai
 psutil
+pinecone-client
