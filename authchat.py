@@ -8,7 +8,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.llms import OpenAI
 from langchain.callbacks import get_openai_callback
-from langchain.chains.question_answering import load_qa_chain
+from langchain.chains.qa_with_sources import load_qa_with_sources_chain
 from langchain.document_loaders import DirectoryLoader
 import magic
 import os
@@ -79,8 +79,8 @@ def process():
     if user_question:
         docs = knowledge_base.similarity_search(user_question)
         
-        llm = OpenAI()
-        chain = load_qa_chain(llm, chain_type="stuff")
+        llm = OpenAI(temperature=0.2)
+        chain = load_qa_with_sources_chain(llm, chain_type="stuff")
         with get_openai_callback() as cb:
           response = chain.run(input_documents=docs, question=user_question)
           print(cb)
