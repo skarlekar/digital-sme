@@ -7,6 +7,7 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 from langchain.callbacks import get_openai_callback
 from langchain.chains.question_answering import load_qa_chain
 from langchain.document_loaders import DirectoryLoader
@@ -81,7 +82,7 @@ def process():
     if user_question:
         docs = knowledge_base.similarity_search(user_question)
         
-        llm = OpenAI()
+        llm = ChatOpenAI(temperature=0, model='gpt-4')
         chain = load_qa_chain(llm, chain_type="stuff")
         with get_openai_callback() as cb:
           response = chain.run(input_documents=docs, question=user_question)

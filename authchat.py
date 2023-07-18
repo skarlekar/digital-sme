@@ -10,6 +10,7 @@ from langchain.llms import OpenAI
 from langchain.callbacks import get_openai_callback
 from langchain.chains.qa_with_sources import load_qa_with_sources_chain
 from langchain.document_loaders import DirectoryLoader
+from langchain.chat_models import ChatOpenAI
 import magic
 import os
 import nltk
@@ -79,7 +80,7 @@ def process():
     if user_question:
         docs = knowledge_base.similarity_search(user_question)
         
-        llm = OpenAI(temperature=0.2)
+        llm = ChatOpenAI(temperature=0, model='gpt-4')
         chain = load_qa_with_sources_chain(llm, chain_type="stuff")
         with get_openai_callback() as cb:
           response = chain.run(input_documents=docs, question=user_question)
