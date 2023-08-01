@@ -12,6 +12,10 @@ credentials:
       email: Sjfischr@gmail.com
       name: Steve Fischer
       password: $2b$12$GZbdFTXg7o9uwh0/aK.NW.deYVthuTBzGrCJGIQv7GTP6BeO/gbFq
+    pkonz:
+      email: paul_m_konz@fanniemae.com
+      name: Paul Konz
+      password: $2b$12$7sI61ohMYYxgST/RncsQveNZof7qkS0X4JM8BmTSqjk21UgfC/4Ue
 cookie:
   expiry_days: 30
   key: some_signature_key # Must be string
@@ -21,4 +25,5 @@ preauthorized:
   - skarlekar@gmail.com
   - psoundappan@gmail.com
   - Sjfischr@gmail.com
+  - paul_m_konz@fanniemae.com
 
